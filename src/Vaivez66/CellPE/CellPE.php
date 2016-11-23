@@ -33,6 +33,11 @@ class CellPE extends PluginBase{
     private $session;
 
     public function onEnable(){
+        if($this->getServer()->getPluginManager()->getPlugin('EconomyAPI') === null){
+            $this->getLogger()->critical('EconomyAPI not found. Disabling plugin...');
+            $this->getServer()->getPluginManager()->disablePlugin($this);
+            return;
+        }
         $this->saveResource('config.yml');
         $this->saveResource('messages.yml');
         $this->cfg = new Config($this->getDataFolder() . 'config.yml', Config::YAML, []);
