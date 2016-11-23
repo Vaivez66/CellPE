@@ -141,6 +141,10 @@ class CellPE extends PluginBase{
         return $this->format;
     }
 
+    /**
+     * @return Session
+     */
+
     public function getSession(){
         return $this->session;
     }
