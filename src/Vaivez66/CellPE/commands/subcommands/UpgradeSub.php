@@ -26,7 +26,7 @@ class UpgradeSub extends SubCommand{
             $player->sendMessage($this->plugin->getMessage('cell.upgrade.not.own.cell'));
             return;
         }
-        if(($this->plugin->getMoney($player) - ($percentage = $this->plugin->getPercentage($this->plugin->getValue('upgrade.percent')))) < 0){
+        if(($this->plugin->getMoney($player) - ($percentage = $this->plugin->getPercentage($this->plugin->getValue('upgrade.percent'), $cell->getPrice()))) < 0){
             $player->sendMessage($this->plugin->getMessage('cell.upgrade.not.enough.money'));
             return;
         }
