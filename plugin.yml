@@ -1,0 +1,50 @@
+name: CellPE
+main: Vaivez66\CellPE\CellPE
+version: 1.0.0
+api: [1.12.0, 2.0.0]
+load: POSTWORLD
+authors: [Vaivez66]
+description: 'Cell plugin for PocketMine'
+commands:
+  cell:
+    description: 'CellPE main command'
+permissions:
+  cell.help.op:
+    description: 'Permission to get the OP help page'
+    default: op
+  cell.addhelper:
+    description: 'Permission to run /cell addhelper'
+    default: true
+  cell.move.other:
+    description: 'Permission to move to others cell'
+    default: op
+  cell.admin:
+    description: 'Permission to run /cell admin'
+    default: op
+  cell.buy:
+    description: 'Permission to run /cell buy'
+    default: true
+  cell.check:
+    description: 'Permission to run /cell check'
+    default: op
+  cell.delete:
+    description: 'Permission to run /cell delete'
+    default: op
+  cell.removehelper:
+    description: 'Permission to run /cell removehelper'
+    default: true
+  cell.sell:
+    description: 'Permission to run /cell sell'
+    default: true
+  cell.set:
+    description: 'Permission to run /cell set'
+    default: op
+  cell.teleport:
+    descirption: 'Permission to run /cell teleport'
+    default: true
+  cell.teleport.other:
+    description: 'Permission to teleport to others cell'
+    default: op
+  cell.upgrade:
+    description: 'Permission to run /cell upgrade'
+    default: true
