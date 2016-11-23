@@ -17,8 +17,6 @@ use Vaivez66\CellPE\listener\EventListener;
 use Vaivez66\CellPE\task\ExpireTask;
 use Vaivez66\CellPE\utils\Format;
 
-use _64FF00\PurePerms\PurePerms;
-
 use onebone\economyapi\EconomyAPI;
 
 class CellPE extends PluginBase{
@@ -31,16 +29,10 @@ class CellPE extends PluginBase{
     private $cellManager;
     /** @var Format */
     private $format;
-    /** @var PurePerms */
-    private $purePerms;
     /** @var Session */
     private $session;
 
     public function onEnable(){
-        if($this->getServer()->getPluginManager()->getPlugin('PurePerms') === null){
-            $this->getServer()->getPluginManager()->disablePlugin($this);
-            return;
-        }
         $this->saveResource('config.yml');
         $this->saveResource('messages.yml');
         $this->cfg = new Config($this->getDataFolder() . 'config.yml', Config::YAML, []);
@@ -48,7 +40,6 @@ class CellPE extends PluginBase{
         $this->cellManager = new CellManager($this);
         $this->format = new Format();
         $this->session = new Session($this);
-        $this->purePerms = $this->getServer()->getPluginManager()->getPlugin('PurePerms');
         $this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
         $this->initCells();
         $this->initCommand();
@@ -147,15 +138,6 @@ class CellPE extends PluginBase{
 
     public function getSession(){
         return $this->session;
-    }
-
-    /**
-     * @param $p
-     * @return mixed
-     */
-
-    public function getGroup($p){
-        return $this->purePerms->getUserDataMgr()->getGroup($p)->getName();
     }
 
     /**
