@@ -2,4 +2,4 @@ A small cell plugin for PocketMine
 
 Required plugin(s):
 
-• EconomyAPI by onebone
+• <link=https://github.com/onebone/EconomyS/tree/master/EconomyAPI>EconomyAPI</link> by onebone
