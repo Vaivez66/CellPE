@@ -1,0 +1,7 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/Vaivez66/CellPE
+branches:
+- master
+projects:
+  CellPE:
+    path: ""
+...
